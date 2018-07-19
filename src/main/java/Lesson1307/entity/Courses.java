@@ -1,6 +1,7 @@
 package Lesson1307.entity;
 
 import java.math.BigDecimal;
+import java.util.List;
 
 import javax.persistence.*;
 
@@ -27,4 +28,13 @@ public class Courses extends BaseEntity {
 	@JoinColumn(name="teacher_id")
 	private Teacher teacher;
 
+//	@ManyToMany
+//	@JoinTable(	name="course_student", 
+//				joinColumns=@JoinColumn(name="course_id"), 
+//				inverseJoinColumns = @JoinColumn(name = "student_id"))
+//	private List<Student> students;
+	
+	@OneToMany(mappedBy="course")
+	private List <CourseStudent> courseStudent;
+	
 }

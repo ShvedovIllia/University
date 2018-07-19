@@ -1,5 +1,7 @@
 package Lesson1307.entity;
 
+import java.util.List;
+
 import javax.persistence.*;
 
 import lombok.*;
@@ -20,5 +22,13 @@ public class Student extends BaseEntity{
 
 	@Column(name = "age", nullable = false, length = 3)
 	private int age;
+//	
+//	@ManyToMany(mappedBy = "students")
+//	
+//	private List<Courses> courses;
+	
+
+	@OneToMany(mappedBy="student")
+	private List <CourseStudent> courseStudent;
 
 }

@@ -4,6 +4,7 @@ import javax.persistence.*;
 
 import lombok.*;
 
+@ToString(callSuper=true)
 @Getter 
 @Setter
 @NoArgsConstructor
